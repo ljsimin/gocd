@@ -14,7 +14,7 @@ pipelines:
                                 command: sleep
                                 arguments:
                                     10
-                            - exex:
+                            - exec:
                                 command: ls
             - deploy:
                 jobs:
