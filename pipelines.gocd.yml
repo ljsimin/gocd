@@ -1,3 +1,4 @@
+format_version: 3
 pipelines:
     api:
         group: dev
@@ -17,3 +18,5 @@ pipelines:
                         tasks:
                             - exec:
                                 command: ls
+                approval:
+                    type: manual
