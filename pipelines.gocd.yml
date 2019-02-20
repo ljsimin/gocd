@@ -1,6 +1,8 @@
 format_version: 3
+common:
+    
 pipelines:
-    api:
+    api-dev:
         group: dev
         materials:
             git:
@@ -28,8 +30,64 @@ pipelines:
                                 command: ls
                 approval:
                     type: manual
-    web:
+    web-dev:
         group: dev
+        materials:
+            git:
+                git: https://github.com/ljsimin/retro-qr.git
+        stages:
+            - build:
+                jobs:
+                    build:
+                        tasks:
+                            - exec:
+                                command: sleep
+                                arguments:
+                                    - 10
+                            - exec:
+                                command: ls
+            - deploy:
+                jobs:
+                    build:
+                        tasks:
+                            - exec:
+                                command: sleep
+                                arguments:
+                                    - 10
+                            - exec:
+                                command: ls
+                approval:
+                    type: manual
+    api-stage:
+        group: stage
+        materials:
+            git:
+                git: https://github.com/ljsimin/retro-qr.git
+        stages:
+            - build:
+                jobs:
+                    build:
+                        tasks:
+                            - exec:
+                                command: sleep
+                                arguments:
+                                    - 10
+                            - exec:
+                                command: ls
+            - deploy:
+                jobs:
+                    build:
+                        tasks:
+                            - exec:
+                                command: sleep
+                                arguments:
+                                    - 10
+                            - exec:
+                                command: ls
+                approval:
+                    type: manual
+    web-stage:
+        group: stage
         materials:
             git:
                 git: https://github.com/ljsimin/retro-qr.git
