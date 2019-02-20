@@ -1,0 +1,19 @@
+pipelines:
+    api:
+        group: dev
+        materials:
+            git:
+                git: git@github.com:ljsimin/retro-qr.git
+        stages:
+            - build:
+                jobs:
+                    build:
+                        tasks:
+                            - exec:
+                                command: ls
+            - deploy:
+                jobs:
+                    build:
+                        tasks:
+                            - exec:
+                                command: ls
