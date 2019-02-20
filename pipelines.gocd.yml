@@ -28,3 +28,31 @@ pipelines:
                                 command: ls
                 approval:
                     type: manual
+    web:
+        group: dev
+        materials:
+            git:
+                git: https://github.com/ljsimin/retro-qr.git
+        stages:
+            - build:
+                jobs:
+                    build:
+                        tasks:
+                            - exec:
+                                command: sleep
+                                arguments:
+                                    - 10
+                            - exec:
+                                command: ls
+            - deploy:
+                jobs:
+                    build:
+                        tasks:
+                            - exec:
+                                command: sleep
+                                arguments:
+                                    - 10
+                            - exec:
+                                command: ls
+                approval:
+                    type: manual
