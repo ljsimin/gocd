@@ -11,11 +11,19 @@ pipelines:
                     build:
                         tasks:
                             - exec:
+                                command: sleep
+                                arguments:
+                                    10
+                            - exex:
                                 command: ls
             - deploy:
                 jobs:
                     build:
                         tasks:
+                            - exec:
+                                command: sleep
+                                arguments:
+                                    10
                             - exec:
                                 command: ls
                 approval:
