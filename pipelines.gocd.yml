@@ -3,7 +3,7 @@ pipelines:
         group: dev
         materials:
             git:
-                git: git@github.com:ljsimin/retro-qr.git
+                git: https://github.com/ljsimin/retro-qr.git
         stages:
             - build:
                 jobs:
