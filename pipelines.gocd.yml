@@ -13,7 +13,7 @@ pipelines:
                             - exec:
                                 command: sleep
                                 arguments:
-                                    10
+                                    - 10
                             - exec:
                                 command: ls
             - deploy:
@@ -23,7 +23,7 @@ pipelines:
                             - exec:
                                 command: sleep
                                 arguments:
-                                    10
+                                    - 10
                             - exec:
                                 command: ls
                 approval:
